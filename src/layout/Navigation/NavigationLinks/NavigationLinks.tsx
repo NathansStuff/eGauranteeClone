@@ -1,34 +1,15 @@
 'use client';
 
-import { UserCircleIcon } from '@heroicons/react/24/outline';
-import Link from 'next/link';
+import { DropdownMenu } from '@/components/DropdownMenu/DropdownMenu';
 
-import { Button, EButtonType } from '@/components/Button';
+import { navigationLinksData } from './navigationLinkData';
 
 export function NavigationLinks(): JSX.Element {
-  const user = false;
-
-  function loginOrLogoutHandler(): void {
-    console.log('loginOrLogoutHandler');
-  }
-
   return (
-    <>
-      <Link href='/finance' data-testid='navigationLinks'>
-        Finance
-      </Link>
-      <Link href='/aboutus'>About Us</Link>
-      <Link href='/faqs'>FAQ</Link>
-      <Link href='/articles'>Articles</Link>
-      {user && (
-        <div className='flex-center space-x-2 w-full md:w-[140px]'>
-          <UserCircleIcon className='h-8 w-8' />
-          <Link href='/profile'>My Account</Link>
-        </div>
-      )}
-      <a href={user ? '/api/auth/logout' : '/api/auth/login'}>
-        <Button title={user ? 'Logout' : 'Login'} onClick={loginOrLogoutHandler} type={EButtonType.OUTLINE} />
-      </a>
-    </>
+    <div data-testid='navigationLinks'>
+      {navigationLinksData.map((link) => (
+        <DropdownMenu key={link.title} title={link.title} options={link.options} />
+      ))}
+    </div>
   );
 }
