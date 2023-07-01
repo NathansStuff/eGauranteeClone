@@ -1,1 +1,1 @@
-export { NavigationLinks } from './NavigationLinks';
+export { navigationLinksData } from './navigationLinkData';

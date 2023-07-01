@@ -12,7 +12,8 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }): JSX.Element {
   return (
     <html lang='en'>
-      <body className={inter.className}>{children}</body>
+      <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+      <body className={inter.className && 'px-4'}>{children}</body>
     </html>
   );
 }

@@ -1,10 +1,11 @@
 import { XMarkIcon } from '@heroicons/react/24/solid';
 
+import { DropdownMenu, DropdownMenuProps } from '@/components/DropdownMenu';
 import { Logo } from '@/layout/Logo';
 
 import { GetStartedButton } from '../GetStartedButton';
 import { LoginLogoutButton } from '../LoginLogoutButton/';
-import { NavigationLinks } from '../NavigationLinks';
+import { navigationLinksData } from '../NavigationLinks';
 
 export function ExpandedNavigation({ onToggle }: { onToggle: () => void }): JSX.Element {
   return (
@@ -19,7 +20,9 @@ export function ExpandedNavigation({ onToggle }: { onToggle: () => void }): JSX.
           <div className='pb-10'>
             <Logo />
           </div>
-          <NavigationLinks />
+          {navigationLinksData.map((link: DropdownMenuProps) => (
+            <DropdownMenu key={link.title} title={link.title} options={link.options} />
+          ))}
         </div>
         <div className='flex flex-col space-y-4'>
           <LoginLogoutButton />

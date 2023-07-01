@@ -1,0 +1,1 @@
+export { MovingCardsImage } from './MovingCardsImage';
