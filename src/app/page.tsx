@@ -1,4 +1,4 @@
-import DropdownMenu from '@/components/DropdownMenu/DropdownMenu';
+import { DropdownMenu } from '@/components/DropdownMenu/DropdownMenu';
 import { Navigation } from '@/layout/Navigation';
 
 export default function Home(): JSX.Element {
