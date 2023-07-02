@@ -8,7 +8,7 @@ import { partners } from './DRiskLists';
 
 export function DRisk(): JSX.Element {
   return (
-    <div className='text-primary flex-center flex-col' data-testid='DRisk'>
+    <div className='text-primary flex-center flex-col mx-4' data-testid='DRisk'>
       <div className='md:flex md:flex-col md:w-full md:px-10 relative max-w-6xl lg:pt-20'>
         <div className='flex flex-col md:flex-row md:items-center xl:flex-row xl:items-center'>
           <div className='md:w-1/2 md:pr-10 '>

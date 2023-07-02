@@ -162,7 +162,5 @@ describe('MovingDiv', () => {
       await new Promise((resolve) => setTimeout(resolve, 1000));
     });
     expect(component.style.bottom).toBe('40px');
-
   }, 10000);
-
 });
