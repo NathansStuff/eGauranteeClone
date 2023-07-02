@@ -27,7 +27,7 @@ export function Button({ title, type = EButtonType.PRIMARY, onClick, className, 
       disabled={type === EButtonType.DISABLED}
       {...rest}
     >
-      <p className={type === EButtonType.OUTLINE ? 'm-0' : ''}>{title}</p>
+      <p>{title}</p>
     </button>
   );
 }
@@ -45,6 +45,6 @@ export function getButtonTypeClassName(type: EButtonType): string {
     case EButtonType.DISABLED:
       return 'bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded h-full hover:cursor-auto';
     case EButtonType.OUTLINE:
-      return 'bg-transparent hover:bg-primary text-primary font-semibold hover:text-white px-4 border border-primary hover:border-transparent rounded';
+      return 'm-0 bg-transparent hover:bg-primary text-primary font-semibold hover:text-white px-4 border border-primary hover:border-transparent rounded';
   }
 }

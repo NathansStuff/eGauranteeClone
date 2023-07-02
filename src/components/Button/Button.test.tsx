@@ -99,6 +99,12 @@ describe('Button', () => {
       expect(getButtonTypeClassName(EButtonType.DISABLED)).toBe(
         'bg-gray-300 text-gray-500 font-bold py-2 px-4 rounded h-full hover:cursor-auto'
       );
+      expect(getButtonTypeClassName(EButtonType.OUTLINE)).toBe(
+        'm-0 bg-transparent hover:bg-primary text-primary font-semibold hover:text-white px-4 border border-primary hover:border-transparent rounded'
+      );
+      expect(getButtonTypeClassName(EButtonType.SECONDARY)).toBe(
+        'bg-secondary hover:bg-secondaryHover text-white font-bold py-2 px-4 h-full focus:bg-secondaryFocus'
+      );
     });
   });
 });

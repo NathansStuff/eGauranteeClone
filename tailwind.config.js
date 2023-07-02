@@ -12,6 +12,20 @@ module.exports = {
         bg: 'rgba(255, 255, 255, 1)', // white #ffffff
         bgDark: 'rgba(30, 58, 75, 1)', // navy black / blue #1e3a4b
       },
+      animation: {
+        marquee: 'marquee 3s linear forwards',
+        marquee2: 'marquee2 3s linear forwards',
+      },
+      keyframes: {
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-200%)' },
+        },
+        marquee2: {
+          '0%': { transform: 'translateX(200%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
+      },
     },
   },
   plugins: [

@@ -11,9 +11,12 @@ const customJestConfig = {
   collectCoverage: true,
   moduleDirectories: ['node_modules', '<rootDir>/'],
   testEnvironment: 'jest-environment-jsdom',
+  moduleNameMapper: {
+    '^@/(.*)$': '<rootDir>/src/$1', // Allows us to use @/ to map to src folder
+  },
   collectCoverageFrom: [
     // Included
-    'src/**/*.{js,jsx,ts,tsx}',
+    'src/**/*.{jsx,tsx}', // Deliberately not including ts and js files, they are used to export basic constants and types
     // Excluded
     '!src/**/*.d.ts', // No need to test type definitions
     '!src/**/*.mocks.{js,jsx,ts,tsx}', // No need to test mocks

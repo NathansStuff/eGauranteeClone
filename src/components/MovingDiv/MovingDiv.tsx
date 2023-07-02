@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 
 interface MovingDivProps {
@@ -41,7 +43,6 @@ export function MovingDiv({
     }
 
     const id = setInterval(() => {
-
       setTopPosition((prev) => {
         // Once it reaches the top or goes higher than the maximumHeight, change the direction
         if (prev + direction * speedOfMovement >= maximumHeight && direction === 1) {
@@ -71,6 +72,7 @@ export function MovingDiv({
   return (
     <div className='relative'>
       <div
+        data-testid='MovingDiv'
         style={{
           bottom: `${topPosition}px`,
           position: 'absolute',

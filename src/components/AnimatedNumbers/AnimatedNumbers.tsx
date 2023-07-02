@@ -28,5 +28,5 @@ export function AnimatedNumbers({ value }: AnimatedNumbersProps): JSX.Element {
     });
   }, [springValue, value]);
 
-  return <span ref={ref}></span>;
+  return <span ref={ref} data-testid='AnimatedNumbers'></span>;
 }
