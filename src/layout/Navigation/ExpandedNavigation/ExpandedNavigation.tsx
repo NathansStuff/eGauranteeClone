@@ -1,9 +1,9 @@
 import { XMarkIcon } from '@heroicons/react/24/solid';
 
 import { DropdownMenu, DropdownMenuProps } from '@/components/DropdownMenu';
+import { GetStartedButton } from '@/components/GetStartedButton';
 import { Logo } from '@/layout/Logo';
 
-import { GetStartedButton } from '../GetStartedButton';
 import { LoginLogoutButton } from '../LoginLogoutButton/';
 import { navigationLinksData } from '../NavigationLinks';
 

@@ -4,8 +4,8 @@ import { Bars3Icon } from '@heroicons/react/24/outline';
 
 import { DropdownMenu } from '@/components/DropdownMenu';
 import { DropdownMenuProps } from '@/components/DropdownMenu/DropdownMenu';
+import { GetStartedButton } from '@/components/GetStartedButton';
 
-import { GetStartedButton } from '../GetStartedButton';
 import { LoginLogoutButton } from '../LoginLogoutButton';
 import { navigationLinksData } from '../NavigationLinks';
 

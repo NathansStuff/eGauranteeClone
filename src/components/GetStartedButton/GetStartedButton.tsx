@@ -8,7 +8,11 @@ import { DropdownMenu } from '@/components/DropdownMenu/DropdownMenu';
 
 import { getStartedLinkData } from './getStartedLinkData';
 
-export function GetStartedButton(): JSX.Element {
+interface GetStartedButtonProps {
+  color?: 'primary' | 'secondary';
+}
+
+export function GetStartedButton({ color = 'primary' }: GetStartedButtonProps): JSX.Element {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
@@ -25,34 +29,39 @@ export function GetStartedButton(): JSX.Element {
     };
   }, []);
 
+  const buttonColorClass = color === 'secondary' ? 'bg-secondary' : 'bg-primary';
+  const optionsColorClass = color === 'secondary' ? 'text-primary' : 'text-white';
+
   return (
     <div>
-      <div className='md:hidden mx-auto flex-center w-52' data-testid='GetStartedButton'>
+      <div className={` mx-auto flex-center w-52 ${color === 'primary' && 'md:hidden'}`} data-testid='GetStartedButton'>
         <div ref={dropdownRef} className={`group relative cursor-pointer py-2 w-full md:w-content text-center`}>
           <div
             onClick={(): void => setIsOpen(!isOpen)}
-            className={`flex items-center justify-between px-4 bg-primary ${isOpen ? 'rounded-t-lg' : 'rounded-lg'}`}
+            className={`flex items-center justify-between px-4 ${buttonColorClass} ${
+              isOpen ? 'rounded-t-lg' : 'rounded-lg'
+            }`}
           >
             <a
-              className='menu-hover my-2 py-2 text-base text-center w-full text-white lg:mx-4 font-semibold'
+              className={`menu-hover my-2 py-2 text-base text-center w-full ${optionsColorClass} lg:mx-4 font-semibold`}
               data-testid='GetStartedButton-button'
             >
               Get Started
             </a>
-            <ChevronDownIcon className='h-4 w-4' />
+            <ChevronDownIcon className={`h-4 w-4 lg:h-8 lg:w-8 ${optionsColorClass}`} />
           </div>
           <div
             data-testid='GetStartedButton-options'
             className={`${
               isOpen ? 'flex' : 'hidden'
-            } w-full flex-col bg-primary py-1 px-4 text-gray-800 shadow-xl transition-all duration-500 ease-in-out rounded-b-lg `}
+            } w-full flex-col ${buttonColorClass} py-1 px-4 text-gray-800 shadow-xl transition-all duration-500 ease-in-out rounded-b-lg `}
           >
             {getStartedLinkData.map((option, index) => (
               <Link
                 key={index}
                 href={option.link}
                 passHref
-                className='my-2 block border-b md:mx-2 border-primary py-1 text-white hover:text-white/80'
+                className={`my-2 block border-b md:mx-2 border-primary py-1 ${optionsColorClass} hover:${optionsColorClass}/80`}
                 data-testid='GetStartedButton-link'
               >
                 {option.title}
@@ -61,9 +70,11 @@ export function GetStartedButton(): JSX.Element {
           </div>
         </div>
       </div>
-      <div className='hidden md:block '>
-        <DropdownMenu title='Get Started' options={getStartedLinkData} type='primary' />
-      </div>
+      {color === 'primary' && (
+        <div className='hidden md:block '>
+          <DropdownMenu title='Get Started' options={getStartedLinkData} type='primary' />
+        </div>
+      )}
     </div>
   );
 }
