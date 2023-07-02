@@ -6,7 +6,7 @@ export interface ITestimonyProps {
   name: string;
   title: string;
   type: string;
-  animation: string;
+  animation?: string;
 }
 
 export function Testimony({ quote, name, title, type, animation }: ITestimonyProps): JSX.Element {
