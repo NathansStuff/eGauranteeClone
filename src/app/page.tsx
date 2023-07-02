@@ -1,6 +1,8 @@
 import { Navigation } from '@/layout/Navigation';
+import { Disruption } from '@/sections/Disruption';
 import { DRisk } from '@/sections/DRisk';
 import { Insist } from '@/sections/Insist';
+import { MainQuote } from '@/sections/MainQuote';
 import { NewWorld } from '@/sections/NewWorld';
 
 export default function Home(): JSX.Element {
@@ -10,6 +12,8 @@ export default function Home(): JSX.Element {
       <DRisk />
       <NewWorld />
       <Insist />
+      <Disruption />
+      <MainQuote />
     </main>
   );
 }
