@@ -13,7 +13,7 @@ export function Testimony({ quote, name, title, type, animation }: ITestimonyPro
   return (
     <div className={`text-white py-10 ${animation}`}>
       <p className='font-bold text-xl h-10 w-10 text-secondary'>
-        <FontAwesomeIcon icon={faQuoteLeft} className='h-10 w-10'/>
+        <FontAwesomeIcon icon={faQuoteLeft} className='h-10 w-10' />
       </p>
       <p className='pt-10'>{quote}</p>
       <p className='pt-4 text-sm md:text-lg'>
