@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import { CurvedGreenLine } from '../CurvedGreenLine';
 
 export function NewWorld(): JSX.Element {
   return (
@@ -35,15 +35,7 @@ export function NewWorld(): JSX.Element {
         </div>
       </div>
       {/* Green Line */}
-      <div className='bg-white w-full'>
-        <Image
-          src='https://www.eguarantee.com.au/wp-content/themes/eguarantee/dist/images/8e23cfeb83b9647b21c4d4a3898454f7.svg'
-          alt=''
-          layout='responsive'
-          width={1440}
-          height={30}
-        />
-      </div>
+      <CurvedGreenLine />
     </div>
   );
 }

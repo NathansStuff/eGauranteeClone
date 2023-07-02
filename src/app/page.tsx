@@ -1,5 +1,6 @@
 import { Navigation } from '@/layout/Navigation';
 import { AcceptedBy } from '@/sections/AcceptedBy';
+import { BusinessTestimonies } from '@/sections/BusinessTestimonies';
 import { Disruption } from '@/sections/Disruption';
 import { DRisk } from '@/sections/DRisk';
 import { HowItWorks } from '@/sections/HowItWorks';
@@ -18,6 +19,7 @@ export default function Home(): JSX.Element {
       <MainQuote />
       <HowItWorks />
       <AcceptedBy />
+      <BusinessTestimonies />
     </main>
   );
 }
