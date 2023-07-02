@@ -47,4 +47,3 @@ export function NewWorld(): JSX.Element {
     </div>
   );
 }
-
