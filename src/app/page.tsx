@@ -1,4 +1,5 @@
 import { Navigation } from '@/layout/Navigation';
+import { AcceptedBy } from '@/sections/AcceptedBy';
 import { Disruption } from '@/sections/Disruption';
 import { DRisk } from '@/sections/DRisk';
 import { HowItWorks } from '@/sections/HowItWorks';
@@ -16,6 +17,7 @@ export default function Home(): JSX.Element {
       <Disruption />
       <MainQuote />
       <HowItWorks />
+      <AcceptedBy />
     </main>
   );
 }
